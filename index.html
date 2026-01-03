@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whack‑a‑Mole — Glassmorphism</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <div id="app">
+
+    
+    <section id="menu" class="screen active" aria-label="Start screen">
+      <div class="glass-panel panel-menu">
+        <h1 class="title">Whack‑a‑Mole</h1>
+
+        <div class="controls">
+          
+          <div class="option-row">
+            <span class="label">Grid size</span>
+            <div class="segmented" role="group" aria-label="Select grid size">
+              <button class="btn toggle" data-grid="3">3×3</button>
+              <button class="btn toggle active" data-grid="4">4×4</button>
+            </div>
+          </div>
+
+          <div class="option-row">
+            <span class="label">Game time</span>
+            <div class="segmented" role="group" aria-label="Select game duration">
+              <button class="btn toggle" data-time="20">20s</button>
+              <button class="btn toggle active" data-time="30">30s</button>
+              <button class="btn toggle" data-time="45">45s</button>
+            </div>
+          </div>
+
+         
+          <button id="startBtn" class="btn primary" aria-label="Start game">Start</button>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="game" class="screen" aria-label="Game screen">
+      
+      <div class="glass-panel panel-game">
+        <div class="floating-cards">
+          <div class="card meter">
+            <span class="meter-label">Score</span>
+            <span id="score">0</span>
+          </div>
+          <div class="card meter">
+            <span class="meter-label">Time</span>
+            <span id="time">00</span>
+          </div>
+        </div>
+
+       
+        <div id="grid" class="grid" aria-label="Mole grid"></div>
+
+        <div class="actions">
+          <button id="pauseBtn" class="btn ghost">Pause</button>
+          <button id="menuBtn" class="btn ghost">Back to menu</button>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="gameover" class="screen" aria-label="Game over">
+      <div class="glass-panel panel-over">
+        <h2 class="title">Game Over</h2>
+        <p class="final">
+          <span class="meter-label">Final score</span>
+          <span id="finalScore">0</span>
+        </p>
+        <div class="actions">
+          <button id="restartBtn" class="btn primary">Restart</button>
+          <button id="backBtn" class="btn ghost">Back to menu</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
